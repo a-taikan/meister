@@ -14,7 +14,7 @@ SECRET_KEY = 'tuniz44(3gouajind_k11@n+c4f%2$9*53v$r(=3kc$llsqe7-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
