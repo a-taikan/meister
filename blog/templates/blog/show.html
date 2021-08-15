@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'show.css' %}">
+    </head>
+    <body>
+    <a >
+        <h1>{{ article.title }}</h1>
+        <div class= 'article_index' >
+            <img  src='{{ MEDIA_URL }}{{article.picture}}' width=80% height=200px>
+           
+        </div>
+    </a>
+    </body>
+</html>
