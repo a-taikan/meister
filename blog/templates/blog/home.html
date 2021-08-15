@@ -9,12 +9,12 @@
         <h1 id= 'title' >シニア掲示板</h1>
         
         {% for article in articles %}
-            <a href=" {{article.id}} ">
+           
                 <div class= 'article_index' >
                     <img  src='{{ MEDIA_URL }}{{article.picture}}' width=100% height=200px>
                     <h2>{{ article.title }}</h2>
                 </div>
-            </a>
+        
         {% endfor %}
     </body>
 </html>
