@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import Article
 
 
-def showall(request):
+def home(request):
     articles = Article.objects.all()
     context = {'articles':articles}
     return render(request, 'blog/home.html', context)

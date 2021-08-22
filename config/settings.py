@@ -72,6 +72,7 @@ from dotenv import (
     load_dotenv,
 )
 load_dotenv(find_dotenv())
+
 DATABASES = {
     'default': dj_database_url.config(conn_max_age=600),
 }
@@ -120,3 +121,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 BASE_DIR = Path(__file__).resolve().parent.parent
 MEDIA_ROOT = BASE_DIR.joinpath('media')
 MEDIA_URL = '/media/'
+
