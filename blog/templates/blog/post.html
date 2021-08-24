@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'home.css' %}">
+    </head>
+    <body>
+        <h1 id= 'title' >投稿フォーム</h1>
+        <form method= "post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value= "変換" class="btn btn-info" />
+        </form>
+    </body>
+    
+</html>

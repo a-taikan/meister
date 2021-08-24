@@ -6,7 +6,9 @@
         <link rel="stylesheet" href="{% static 'home.css' %}">
     </head>
     <body>
-        <h1 id= 'title' >シニア掲示板</h1>
+        <a href="{% url 'post' %}" id="post">投稿</a>
+        <h1 id= 'title' >　　　シニア掲示板  　</h1>
+        
         
         {% for article in articles %}
             <a href="{% url 'show' article.id %}">
@@ -17,4 +19,5 @@
             </a>
         {% endfor %}
     </body>
+
 </html>

@@ -12,3 +12,7 @@ class Article(models.Model):
 
     def __str___(self):
         return  self.image.url
+
+class Image(models.Model):
+    picture = models.ImageField(upload_to='images/')
+    

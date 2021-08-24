@@ -12,3 +12,16 @@ def blog_show(request, article_id):
     article= Article.objects.get(pk= article_id)
     context = {'article': article}
     return render(request, 'blog/show.html', context)
+
+def post(request):
+    return render(request, 'blog/post.html')
+
+
+from django.views.generic.edit import FormView
+
+from . import forms
+
+
+class Index(FormView):
+    form_class = forms.PostForm
+    template_name = "blog/post.html"
