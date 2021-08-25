@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1 id= 'title' >投稿フォーム</h1>
-        <form method= "post">
+        <form action="{% url 'post' %}" method= "post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
             <input type="submit" value= "変換" class="btn btn-info" />
