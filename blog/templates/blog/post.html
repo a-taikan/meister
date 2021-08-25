@@ -6,11 +6,12 @@
         <link rel="stylesheet" href="{% static 'home.css' %}">
     </head>
     <body>
-        <h1 id= 'title' >投稿フォーム</h1>
+        <a href="{% url 'home' %}" id="post" > 戻る </a>
+        <h1 id= 'title' >　　投稿フォーム</h1>
         <form action="{% url 'post' %}" method= "post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value= "変換" class="btn btn-info" />
+            <input type="submit" value= "送信" class="btn btn-info" />
         </form>
     </body>
     
