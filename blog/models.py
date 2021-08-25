@@ -14,5 +14,6 @@ class Article(models.Model):
         return  self.image.url
 
 class Image(models.Model):
-    picture = models.ImageField(upload_to='images/')
+    images = models.ImageField(upload_to='images2/', null=True)
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, null=True)
     
