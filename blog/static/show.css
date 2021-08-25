@@ -2,6 +2,16 @@ h1{
     text-align: center;
 }
 
-.article_index{
+.image{
     text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    
+}
+
+#body{
+    margin: 20px  auto;
+    width: 70%;
+    height: 100px;
+    font-size: 25px;
 }
