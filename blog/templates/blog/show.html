@@ -22,7 +22,9 @@
         </div>
 
         <div id= "images"> 
-         
+            {% for ob in article.image_set.all %}
+                <img src="{{ MEDIA_URL }}{{ ob.images}}" width=200px height= 200px>
+            {% endfor %}
         </div>
     </body>
 </html>
