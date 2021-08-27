@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import Article
+from .models import Image
 
 
 def home(request):
@@ -8,10 +9,7 @@ def home(request):
     context = {'articles':articles}
     return render(request, 'blog/home.html', context)
 
-def blog_show(request, article_id):
-    article= Article.objects.get(pk= article_id)
-    context = {'article': article}
-    return render(request, 'blog/show.html', context)
+
 
 def post(request):
     return render(request, 'blog/post.html')
@@ -47,8 +45,29 @@ class FormView(TemplateView):
         return render(request, "blog/post.html",context=self.params)
 
 
+def add_img(request, article_id):
+    article2= Article.objects.get(pk= article_id)
+    form = forms.ImageForm(request.POST, request.FILES)
+    if form.is_valid():
+        portfolio_images = request.FILES.getlist('images', False)
+        for images in portfolio_images:
+            image_instance = Image(
+                images=images,
+                article= article2
+            )
+            image_instance.save()
 
+    return redirect("home")
 
+def blog_show(request, article_id):
+    article2= Article.objects.get(pk= article_id)
+    initial_dict = dict(article=article2)
+    context = {
+        'article': article2,
+        'form': forms.ImageForm(
+        initial= initial_dict)
+    }
+    return render(request, 'blog/show.html', context)
 
 
                 
