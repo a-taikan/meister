@@ -1,7 +1,9 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .models import Article
-from .models import Image
+from .models import Article, Image, Category
+from django.db.models import Q
+from functools import reduce
+from operator import and_
 
 
 def home(request):
@@ -70,4 +72,27 @@ def blog_show(request, article_id):
     return render(request, 'blog/show.html', context)
 
 
-                
+def search(request):
+    post_data = Article.objects.all()
+    keyword = request.GET.get('keyword')
+
+    if keyword:
+        exclusion_list = set([' ', '　'])
+        query_list = ''
+        for word in keyword:
+            if not word in exclusion_list:
+                query_list += word
+        query = reduce(and_, [Q(title__icontains=q) | Q(body__icontains=q) for q in query_list])
+        post_data = post_data.filter(query)
+
+    return render(request, 'blog/home.html', {
+        'keyword': keyword,
+        'articles' : post_data
+    })
+
+
+def category_choise(request, category):
+    category_data = Category.objects.get(name = category)
+    articles = Article.objects.all()
+    articles = articles.filter(category=category_data)
+    return render(request, 'blog/home.html', {'articles': articles})

@@ -2,7 +2,15 @@ from django.db import models
 from django.utils import timezone
 
 
+class Category(models.Model):
+    name = models.CharField('カテゴリ', max_length= 100 )
+
+    def __str__(self):
+        return self.name
+
+
 class Article(models.Model):
+    category = models.ForeignKey(Category, verbose_name = 'カテゴリ', on_delete = models.PROTECT)
     title = models.CharField(max_length=200)
     body = models.TextField()
     picture = models.ImageField(upload_to='images/')
