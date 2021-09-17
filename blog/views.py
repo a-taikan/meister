@@ -13,9 +13,6 @@ def home(request):
 
 
 
-def post(request):
-    return render(request, 'blog/post.html')
-
 
 
 from . import forms
@@ -44,7 +41,7 @@ class FormView(TemplateView):
                 self.params["form"].save(commit=True)
                 self.params["Message"] = "入力情報が送信されました。"
 
-        return render(request, "blog/post.html",context=self.params)
+        return redirect("home")
 
 
 def add_img(request, article_id):

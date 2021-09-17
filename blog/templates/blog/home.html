@@ -6,33 +6,39 @@
         <link rel="stylesheet" href="{% static 'css/home.css' %}">
     </head>
     <body>
-        <a href="{% url 'post' %}" id="post">投稿</a>
-        <h1 id= 'title' >　　　シニア掲示板  　</h1>
+        <header>  
+            <h1 id= 'title' >シニア掲示板  　　　　　</h1>
+            <a href="{% url 'post' %}" id="post">投稿</a>
+        </header>
         <div class="search">
-            <form method='get' action="{% url 'search' %}" class="input-search">
-                <input type="text" name='keyword' class="form-control" >
-                <button class="btn" type="submit">検索</button>
-            </form>
+            <div class="search-block">
+                <form method='get' action="{% url 'search' %}" class="input-search">
+                    <input type="text" name='keyword' class="form-control"  size= 50>
+                    <button class="btn" type="submit">検索</button>
+                </form>
+            </div>
             <div class="category_list">
                 <ul>
                     {% for category in category_list %}
-                        <li><a href="{% url 'category' category %}">
+                        <li class='categorys'><a href="{% url 'category' category %}">
                             {{category.name}}
                         </a></li>
                     {% endfor %}
-                    
+                
                 </ul>
             </div>
         </div>
         
-        {% for article in articles %}
-            <a href="{% url 'show' article.id %}">
-                <div class= 'article_index' >
-                    <img  src='{{ MEDIA_URL }}{{article.picture}}' width=100% height=200px>
-                    <h2>{{ article.title }}</h2>
-                </div>
-            </a>
-        {% endfor %}
+        <main>
+            {% for article in articles %}
+                <a href="{% url 'show' article.id %}">
+                    <div class= 'article_index' >
+                        <img  src='{{ MEDIA_URL }}{{article.picture}}' width=100% height=200px>
+                        <h2>{{ article.title }}</h2>
+                    </div>
+                </a>
+            {% endfor %}
+        </main>
     </body>
 
 </html>

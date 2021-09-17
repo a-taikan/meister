@@ -1,24 +1,81 @@
+header{
+    position: relative;
+    height: 100px;
+   
+    margin: 0;
+}
+
 #title{
     text-align: center;
     margin: 50px 0;
+    display: inline-block;
+    position: absolute;
+    top:30% ;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
-.article_index{
-    display: inline-block;
-    width: 20%;
-    margin: 0 2%;
-    text-align: center;
-}
+
 
 #post{
-    float: right;
     display: inline-block;
     width:100px;
     text-decoration: none;
     font-size: 30px;
     color: black;
+    position: absolute;
+    right: 5%;
+    top: 30%;
 }
 
 .search{
-    margin: 20px 0;
+    display: inline-block;
+    margin-left: 100px;
+    margin-top: 10px;
 }
+
+.form-control{
+    font-size: 17px;
+}
+
+main{
+    
+    text-align: center;
+    margin-top: 70px;
+}
+
+
+.article_index{
+    display: inline-block;
+    width: 20%;
+    margin: 20px 2%;
+    text-align: center;
+}
+
+
+
+
+
+.categorys{
+    display: inline-block;
+    margin: 0 20px;
+    
+}
+
+.search-block{
+    display: inline-block;
+    
+}
+
+.category-list{
+    display: inline-block;
+}
+
+.input-search{
+    display: inline-block;
+
+}
+
+

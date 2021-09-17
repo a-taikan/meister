@@ -1,0 +1,46 @@
+.post-form{
+    text-align: center;
+    width: 1000px;
+    margin: 0 auto;
+    
+}
+
+#title{
+    text-align: center;
+    margin: 10px 0 30px 0;
+    font-size: 30px;
+}
+
+#home{
+    float: right;
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 20px;
+    color: black;
+}
+
+.image{
+    margin: 10px 0;
+}
+
+.category{
+    margin: 10px 0;
+}
+
+.title{
+    margin: 10px 30px 10px 0;
+    padding: 5px 13px;
+    font-size: 20px;
+}
+
+.body{
+    padding: 15px;
+    font-size: 20px;
+}
+
+.btn{
+    padding: 5px 15px;
+    font-size: 20px;
+    float: right;
+    margin: 10px 100px 100px 0;
+}

@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="{% static 'css/show.css' %}">
     </head>
     <body>
+        <a href="{% url 'home' %}" id="home" > 戻る </a>
         <form action="{% url 'add_img' article.id %}" name="image" method= "post" enctype="multipart/form-data">
             {% csrf_token %}
             {{form.as_p}}
